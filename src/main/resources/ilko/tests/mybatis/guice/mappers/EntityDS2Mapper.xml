@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ilko.tests.mybatis.guice.mappers.EntityDS2Mapper">
+
+    <select id="selectById" parameterType="java.lang.Integer" resultType="ilko.tests.mybatis.guice.entities.EntityDS2">
+        select ID, STREET, CITY from ADDRESSES where ID = #{id}
+    </select>
+
+    <insert id="insert" parameterType="ilko.tests.mybatis.guice.entities.EntityDS2">
+        insert into ADDRESSES(ID, STREET, CITY) values (#{id}, #{street}, #{city})
+    </insert>
+
+</mapper>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ilko.tests.mybatis.guice.mappers.EntityDS1Mapper">
+
+    <select id="selectById" parameterType="java.lang.Integer" resultType="ilko.tests.mybatis.guice.entities.EntityDS1">
+        select ID, FIRSTNAME, LASTNAME from customers WHERE id = #{id}
+    </select>
+
+    <insert id="insert" parameterType="ilko.tests.mybatis.guice.entities.EntityDS1">
+        insert into customers(ID, FIRSTNAME, LASTNAME) values(#{id}, #{firstname}, #{lastname})
+    </insert>
+
+    <update id="update" parameterType="ilko.tests.mybatis.guice.entities.EntityDS1">
+        update customers set FIRSTNAME = #{firstname}, LASTNAME = #{lastname} where ID = #{id}
+    </update>
+
+    <delete id="deleteById" parameterType="java.lang.Integer">
+        delete from customers where ID = #{id}
+    </delete>
+
+</mapper>
